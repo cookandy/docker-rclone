@@ -30,16 +30,12 @@ RUN \
 	shadow && \
  
 # cleanup
- apk del --purge \
-	build-dependencies && \
+# apk del --purge \
+#	build-dependencies && \
  rm -rf \
 	/tmp/* \
 	/var/tmp/* \
 	/var/cache/apk/*
-
-# try to install curl
-RUN \
- apk add curl
 
 # create abc user
 RUN \
