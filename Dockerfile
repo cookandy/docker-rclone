@@ -1,5 +1,4 @@
 FROM quay.io/justcontainers/base-alpine:v0.12.2
-MAINTAINER tynor88 <tynor@hotmail.com>
 
 # s6 environment settings
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
@@ -37,6 +36,10 @@ RUN \
 	/tmp/* \
 	/var/tmp/* \
 	/var/cache/apk/*
+
+# try to install curl
+RUN \
+ apk add curl
 
 # create abc user
 RUN \
