@@ -28,14 +28,14 @@
     fi
   fi
   
-  sendPushover "Starting backup of $DOCKER_NAME" "Running $(eval echo $sync_command)..." 
+  sendPushover "Starting sync of $DOCKER_NAME" "Running $(eval echo $sync_command)..." 
   
   echo "Executing => $sync_command"
   eval "$sync_command"
   
   if [ $? -eq 0 ]; then
-    sendPushover "Successfully backed up $DOCKER_NAME!" ""
+    sendPushover "Successfully synced $DOCKER_NAME!" ""
   else
-    sendPushover "Could not back up $DOCKER_NAME!" ""
+    sendPushover "Could not sync $DOCKER_NAME!" ""
   fi
 ) 200>/var/lock/rclone.lock
