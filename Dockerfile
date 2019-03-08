@@ -19,6 +19,7 @@ RUN \
 RUN \
  apk add --no-cache --virtual=build-dependencies \
  wget \
+ curl \
  unzip && \
  
  cd tmp && \
