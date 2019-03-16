@@ -34,8 +34,10 @@
   eval "$sync_command"
   
   if [ $? -eq 0 ]; then
-    sendPushover "Successfully synced $DOCKER_NAME!" ""
+    echo "success"
+    sendPushover "Successfully synced $DOCKER_NAME!" "Success!"
   else
-    sendPushover "Could not sync $DOCKER_NAME!" ""
+    echo "fail"
+    sendPushover "Could not sync $DOCKER_NAME!" "Failed. :("
   fi
 ) 200>/var/lock/rclone.lock
