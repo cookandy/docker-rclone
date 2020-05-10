@@ -5,7 +5,7 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 ENV S6_KEEP_ENV=1
 
 # global environment settings
-ENV RCLONE_VERSION="current"
+ENV RCLONE_VERSION="v1.51.0"
 ENV RCLONE_ARCH="amd64"
 
 # install packages
@@ -22,7 +22,7 @@ RUN \
  unzip && \
  
  cd tmp && \
- wget -q http://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${RCLONE_ARCH}.zip && \
+ wget -q http://downloads.rclone.org/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-${RCLONE_ARCH}.zip && \
  unzip /tmp/rclone-${RCLONE_VERSION}-linux-${RCLONE_ARCH}.zip && \
  mv /tmp/rclone-*-linux-${RCLONE_ARCH}/rclone /usr/bin && \
  
