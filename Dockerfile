@@ -5,8 +5,8 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 ENV S6_KEEP_ENV=1
 
 # global environment settings
-ENV RCLONE_VERSION="v1.51.0"
-ENV RCLONE_ARCH="amd64"
+ARG RCLONE_VERSION="v1.51.0"
+ARG RCLONE_ARCH="amd64"
 
 # install packages
 RUN \
